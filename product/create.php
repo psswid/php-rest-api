@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Stef
- * Date: 26.01.2018
- * Time: 18:07
- */
 
 //Req headers
 header("Access-Control-Allow-Origin: *");
@@ -75,4 +69,3 @@ function create(){
     }
     return false;
 }
-

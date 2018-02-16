@@ -1,11 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Stef
- * Date: 26.01.2018
- * Time: 18:06
-
-contains properties and methods for "product" database queries.
+*contains properties and methods for "product" database queries.
  */
 
 class Product
@@ -38,8 +33,8 @@ class Product
         $query = "SELECT
                     c.name AS category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
                   FROM
-                  " . $this->table_name . " p 
-                  LEFT JOIN 
+                  " . $this->table_name . " p
+                  LEFT JOIN
                     categories c ON p.category_id = c.id
                   ORDER BY
                     p.created DESC";
@@ -61,11 +56,11 @@ class Product
         //read single record
         $query = "SELECT
                 c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
-            FROM 
+            FROM
                 " . $this->table_name . " p
                    LEFT JOIN
                     categories c ON p.category_id = c.id
-                   WHERE 
+                   WHERE
                    p.id = ? LIMIT 0,1";
 
         //prepare
@@ -95,14 +90,14 @@ class Product
     function update(){
 
         //update query
-        $query = "UPDATE 
+        $query = "UPDATE
                     " . $this->table_name. "
                     SET
-                        name=:name, 
-                        price=:price, 
-                        description=:description, 
-                        category_id=:category_id 
-                    WHERE 
+                        name=:name,
+                        price=:price,
+                        description=:description,
+                        category_id=:category_id
+                    WHERE
                         id=:id";
 
         //prepare
@@ -157,14 +152,14 @@ class Product
     function search($keywords){
 
         //select all query
-        $query = "SELECT 
+        $query = "SELECT
                     c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
                   FROM " . $this->table_name. " p
-                  LEFT JOIN 
-                    categories c ON p.category_id = c.id 
-                  WHERE 
-                    p.name LIKE ? OR p.description LIKE ? OR c.name LIKE ? 
-                  ORDER BY 
+                  LEFT JOIN
+                    categories c ON p.category_id = c.id
+                  WHERE
+                    p.name LIKE ? OR p.description LIKE ? OR c.name LIKE ?
+                  ORDER BY
                     p.created DESC";
 
         //prepare
@@ -189,12 +184,12 @@ class Product
     public function readPaging($from_record_num, $records_per_page){
 
         //select
-        $query = "SELECT 
-                    c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created 
+        $query = "SELECT
+                    c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
                   FROM " . $this->table_name . " p
-                  LEFT JOIN 
-                    categories c ON p.category_id = c.id 
-                  ORDER BY p.created DESC 
+                  LEFT JOIN
+                    categories c ON p.category_id = c.id
+                  ORDER BY p.created DESC
                   LIMIT ?, ?";
 
         //prepare

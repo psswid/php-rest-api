@@ -1,10 +1,5 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Stef
- * Date: 26.01.2018
- * Time: 18:06
- *
  * contains properties and methods for "category" database queries.
  */
 
@@ -28,8 +23,8 @@ class Category
     //used by select drop-down list
     public function readAll(){
 
-        $query = "SELECT 
-                    id, name, description 
+        $query = "SELECT
+                    id, name, description
                   FROM " . $this->table_name . " ORDER BY name";
 
         $stmt = $this->conn->prepare($query);
@@ -42,9 +37,9 @@ class Category
     //used by select drop-down list
     public function read(){
 
-        $query = "SELECT 
-                    id, name, description 
-                 FROM " . $this->table_name . " 
+        $query = "SELECT
+                    id, name, description
+                 FROM " . $this->table_name . "
                  ORDER BY name";
 
         $stmt=$this->conn->prepare($query);

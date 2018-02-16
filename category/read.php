@@ -1,10 +1,5 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Stef
- * Date: 26.01.2018
- * Time: 18:02
- *
  *  file that will output JSON data based from "categories" database records.
  */
 

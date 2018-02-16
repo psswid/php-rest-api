@@ -1,10 +1,5 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Stef
- * Date: 26.01.2018
- * Time: 18:05
- *
  *  file used for connecting to the database.
  */
 
